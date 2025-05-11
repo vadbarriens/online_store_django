@@ -1,21 +1,5 @@
 [
 {
-    "model": "catalog.category",
-    "pk": 5,
-    "fields": {
-        "name": "телевизоры",
-        "description": "телевизоры тут"
-    }
-},
-{
-    "model": "catalog.category",
-    "pk": 6,
-    "fields": {
-        "name": "телефоны",
-        "description": "телефоны тут"
-    }
-},
-{
     "model": "catalog.product",
     "pk": 4,
     "fields": {
