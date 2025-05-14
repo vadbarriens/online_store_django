@@ -1,0 +1,41 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+        "name": "LG",
+        "description": "хороший телевизор",
+        "image": "",
+        "category": 5,
+        "price": 30000.0,
+        "created_at": "2025-05-11T21:50:58.609Z",
+        "updated_at": "2025-05-11T22:13:53.844Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+        "name": "DEXP",
+        "description": "Бюджетный телевизор",
+        "image": "",
+        "category": 5,
+        "price": 10000.0,
+        "created_at": "2025-05-11T21:53:10.678Z",
+        "updated_at": "2025-05-11T21:53:10.678Z"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+        "name": "samsung galaxy",
+        "description": "премиум телефон",
+        "image": "",
+        "category": 6,
+        "price": 200000.0,
+        "created_at": "2025-05-11T21:54:36.052Z",
+        "updated_at": "2025-05-11T21:54:36.052Z"
+    }
+}
+]
