@@ -18,7 +18,7 @@ class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='наименование продукта',
                             help_text='введите наименование продукта')
     description = models.TextField(verbose_name='описание продукта', help_text='опишите продукт')
-    image = models.ImageField(upload_to='images/', blank=True, null=True, verbose_name='изображение',
+    image = models.ImageField(upload_to='products/photo', blank=True, null=True, verbose_name='изображение',
                               help_text='загрузите изображение продукта')
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, verbose_name="Категория"
