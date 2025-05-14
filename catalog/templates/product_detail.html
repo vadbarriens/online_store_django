@@ -5,6 +5,7 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
+                    <p class="lead">{{ product.name }}</p>
                     <div class="card shadow-sm">
                         <img src="{{ product.image | media_filter }}">
                         <div class="card-body"><p class="card-text">{{ product.description }}</p>
@@ -12,6 +13,7 @@
                                 <div class="btn-group">
                                     <a class="btn btn-primary" href="{% url 'catalog:product_list' %}" role="button">Назад</a>
                                 </div>
+                                <p class="lead">{{ product.price }} руб.</p>
                             </div>
                         </div>
                     </div>
