@@ -1,9 +1,10 @@
-from django.urls import path, include
+from django.urls import path
 from catalog.apps import CatalogConfig
-from catalog.views import index
+
+from catalog.views import product_list
 
 app_name = CatalogConfig.name
 
 urlpatterns = [
-    path('', index, name='index'),
+    path('', product_list, name='product_list'),
 ]
