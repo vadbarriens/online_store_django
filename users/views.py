@@ -2,6 +2,7 @@ from django.contrib.auth import login
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 
+from config.settings import EMAIL_HOST_USER
 from users.forms import UserRegisterForm
 from users.models import User
 
@@ -23,6 +24,6 @@ class UserCreateView(CreateView):
     def send_welcome_email(self, user_email):
         subject = 'Добро пожаловать в наш магазин'
         message = 'Спасибо, что зарегистрировались на нашем сайте!'
-        from_email = 'vadbarriens@yandex.ru'
+        from_email = EMAIL_HOST_USER
         recipient_list = [user_email]
         send_mail(subject, message, from_email, recipient_list)
