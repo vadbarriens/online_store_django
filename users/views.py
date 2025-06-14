@@ -12,7 +12,7 @@ from django.core.mail import send_mail
 class UserCreateView(CreateView):
     model = User
     form_class = UserRegisterForm
-    template_name = 'catalog/product_form.html'
+    template_name = 'users/user_form.html'
     success_url = reverse_lazy('users:login')
 
     def form_valid(self, form):
