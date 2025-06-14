@@ -27,10 +27,15 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
         ordering = ['category']
+        permissions = [
+            ("can_unpublish_product", "can unpublish product"),
+            ("can_delete_product", "Can delete product"),
+        ]
 
     def __str__(self):
         return f'{self.name}: {self.description}'
