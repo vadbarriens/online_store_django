@@ -24,6 +24,7 @@ class StyleFormMixin:
             else:
                 fild.widget.attrs['class'] = 'form-control'
 
+
 class ProductForm(ModelForm, StyleFormMixin):
     class Meta:
         model = Product
@@ -58,4 +59,4 @@ class ProductForm(ModelForm, StyleFormMixin):
 class ProductModeratorForm(ModelForm):
     class Meta:
         model = Product
-        fields = ('publication_status', )
+        fields = ('publication_status',)

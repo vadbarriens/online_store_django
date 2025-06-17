@@ -34,7 +34,6 @@ class Product(models.Model):
     owner = models.ForeignKey(User, verbose_name='Владелец', help_text='Укажите владельца продукта', blank=True,
                               null=True, on_delete=models.SET_NULL)
 
-
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'

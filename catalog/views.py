@@ -14,6 +14,7 @@ class ContactForm(forms.Form):
     phone_number = forms.CharField()
     message = forms.CharField(widget=forms.Textarea)
 
+
 class ContactsView(FormView):
     template_name = 'catalog/contacts.html'
     form_class = ContactForm
@@ -22,7 +23,6 @@ class ContactsView(FormView):
     def form_valid(self, form):
         name = form.cleaned_data['name']
         return HttpResponse(f'Спасибо {name}! Сообщение отправлено.')
-
 
 
 class ProductListView(ListView):
