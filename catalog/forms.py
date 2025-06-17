@@ -44,3 +44,9 @@ class ProductForm(ModelForm):
         if price is not None and price < 0:
             raise ValidationError('Цена не может быть отрицательной')
         return price
+
+
+class ProductModeratorForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ("__all__")
