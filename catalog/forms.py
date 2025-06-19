@@ -28,7 +28,7 @@ class StyleFormMixin:
 class ProductForm(ModelForm, StyleFormMixin):
     class Meta:
         model = Product
-        fields = "__all__"
+        fields = ('name', 'description', 'price')
 
     def __init__(self, *args, **kwargs):
         super(ProductForm, self).__init__(*args, **kwargs)
