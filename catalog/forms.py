@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, BooleanField
 from .models import Product
 from django.core.exceptions import ValidationError
 
@@ -15,10 +15,20 @@ FORBIDDEN_WORDS = [
 ]
 
 
-class ProductForm(ModelForm):
+class StyleFormMixin:
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for fild_name, fild in self.fields.items():
+            if isinstance(fild, BooleanField):
+                fild.widget.attrs['class'] = 'form-check-input'
+            else:
+                fild.widget.attrs['class'] = 'form-control'
+
+
+class ProductForm(ModelForm, StyleFormMixin):
     class Meta:
         model = Product
-        fields = "__all__"
+        fields = ('name', 'description', 'price')
 
     def __init__(self, *args, **kwargs):
         super(ProductForm, self).__init__(*args, **kwargs)
@@ -44,3 +54,9 @@ class ProductForm(ModelForm):
         if price is not None and price < 0:
             raise ValidationError('Цена не может быть отрицательной')
         return price
+
+
+class ProductModeratorForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ('publication_status',)
